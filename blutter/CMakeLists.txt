@@ -113,3 +113,8 @@ target_compile_options(${BINNAME} PRIVATE ${cc_opts})
 
 cmake_path(SET DST_DIR NORMALIZE "${PROJECT_SOURCE_DIR}/../bin")
 install (TARGETS ${BINNAME} RUNTIME DESTINATION ${DST_DIR})
+
+# optional CPython extension module (see python.cmake and blutter_py.py)
+if (BUILD_PYTHON_MODULE)
+	include(python.cmake)
+endif()
